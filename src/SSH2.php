@@ -38,7 +38,7 @@ class SSH2 {
         $this->conn = ssh2_connect($host, $port);
         if ($this->is_connected()) {
             switch (get_class($auth)) {
-                case 'Password':
+                case 'SSH2\Password':
                     $username = $auth->getUsername();
                     $password = $auth->getPassword();
                     $this->authentication = ssh2_auth_password($this->conn, $username, $password);
@@ -48,7 +48,7 @@ class SSH2 {
                     }
                     break;
 
-                case 'Key':
+                case 'SSH2\Key':
                     $username = $auth->getUsername();
                     $publicKey = $auth->getPublicKey();
                     $privateKey = $auth->getPrivateKey();
