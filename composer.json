@@ -1,0 +1,23 @@
+{
+    "name": "lodev09/php-ssh2",
+    "description": "PHP SSH2 extension wrapper.",
+    "homepage": "https://github.com/lodev09/php-ssh2",
+    "license": "MIT",
+    "keywords": [
+        "php", "class", "ssh2", "sftp", "scp", "methods"
+    ],
+    "authors": [
+        {
+            "name": "Jovanni Lo",
+            "email": "lodev09@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "SSH2\\": "src/"
+        }
+    }
+}
