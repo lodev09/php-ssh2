@@ -1,6 +1,6 @@
 {
     "name": "lodev09/php-ssh2",
-    "description": "PHP SSH2 extension wrapper.",
+    "description": "Wrapper class for PHP's SSH2 extension.",
     "homepage": "https://github.com/lodev09/php-ssh2",
     "license": "MIT",
     "keywords": [
