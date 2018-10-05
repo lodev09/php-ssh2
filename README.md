@@ -16,11 +16,11 @@ $auth = new \SSH2\Password(SFTP_USER, SFTP_PASSWORD);
 $sftp = new \SSH2\SFTP(SFTP_HOST, $auth);
 
 if ($sftp->is_connected() && $sftp->is_authenticated()) {
-	// upload
-	$sftp->put('/path/to/my/local/file', '/remote/file');
+    // upload
+    $sftp->put('/path/to/my/local/file', '/remote/file');
 
-	// download
-	$sftp->get('/remote/file', '/local/destination/file');
+    // download
+    $sftp->get('/remote/file', '/local/destination/file');
 }
 ```
 
