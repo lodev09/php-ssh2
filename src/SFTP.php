@@ -28,7 +28,7 @@ class SFTP extends SSH2 {
     public function list($addr, $limit = 0) {
         if (!$this->is_connected()) return false;
         $result = array();
-        $files = scandir('ssh2.sftp://'.$this->sftp.'/'.$addr);
+        $files = $this->ls($addr);
         if (!empty($files)) {
             $i = 0;
             foreach ($files as $file) {
@@ -40,6 +40,11 @@ class SFTP extends SSH2 {
             }
         }
         return $result;
+    }
+
+    public function ls($addr) {
+        $files = scandir('ssh2.sftp://'.$this->sftp.'/'.$addr);
+        return $files;
     }
 
     public function mv($file, $dest_file, $rename_exists = true) {
