@@ -73,14 +73,14 @@ class SFTP extends SSH2 {
         return unlink('ssh2.sftp://'. $this->sftp.'/'.$remote_file);
     }
 
-    public function get($remote_file, $local_file) {
+    public function get($local_file, $remote_file) {
         if (!$this->is_connected()) return false;
         //ssh2_scp_recv($this->conn, $file, $dest);
         $data = file_get_contents('ssh2.sftp://'. $this->sftp.'/'.$remote_file);
         return file_put_contents($local_file, $data);
     }
 
-    public function put($local_file, $remote_file, $rename_exists = true) {
+    public function put($remote_file, $local_file, $rename_exists = true) {
         if (!$this->is_connected()) return false;
 
         if ($rename_exists) {
